@@ -1,0 +1,54 @@
+<div class="card w-25 mx-auto text-center mt-5">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <h3 class="display-3 text-secondary">Sign Up</h3>
+      <div class="formGroup m-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email Address"
+          #userEmail
+          required
+        />
+      </div>
+      <div class="formGroup m-3">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          #userPwd
+          required
+        />
+      </div>
+      <div class="formGroup">
+        <input
+          type="button"
+          class="btn btn-info btn-lg"
+          value="Sign Up"
+          (click)="authService.SignUp(userEmail.value, userPwd.value)"
+        />
+      </div>
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+      <div class="formGroup m-2">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="authService.GoogleAuth()"
+        >
+          <i class="fab fa-google-plus-g"></i>
+          Continue with Google
+        </button>
+      </div>
+    </div>
+    <div class="redirectToLogin m-2">
+      <span
+        >Already have an account?
+        <span class="redirect btn-info btn mx-1" routerLink="/sign-in"
+          >Log In</span
+        ></span
+      >
+    </div>
+  </div>
+</div>
